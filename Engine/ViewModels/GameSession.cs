@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Engine.Models;  //Gets the Player class on ./Models/Player.cs
+using Engine.Models;  //Gets Player() class on ./Models/Player.cs
 
 namespace Engine.ViewModels
 {
-    internal class GameSession
+    public class GameSession
     {
-        Player CurrentPlayer { get; set; }
+        public Player CurrentPlayer { get; set; }
 
-        public GameSession()  //Constructor (if we want to create a GameSession object)
+        public GameSession()  //Constructor (if we want to create a GameSession() object)
         {
             CurrentPlayer = new Player();
             CurrentPlayer.Name = "BLONDED2K";
+            CurrentPlayer.CharClass = "Warrior";
+            CurrentPlayer.Health = 10;
             CurrentPlayer.Gold = 1000000;
+            CurrentPlayer.ExperiencePoints = 0;
+            CurrentPlayer.Level = 1;
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Engine.ViewModels; //Gets GameSession() class on ./Engine/Models/GameSession.cs
 
 namespace WPFUI
 {
@@ -16,9 +17,15 @@ namespace WPFUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GameSession _gameSession;
+          
         public MainWindow()
         {
             InitializeComponent();
+            
+            _gameSession = new GameSession();
+
+            DataContext = _gameSession; //What MainWIndow.xaml will use for its values
         }
     }
 }

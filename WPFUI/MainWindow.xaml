@@ -20,9 +20,41 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Main Menu" HorizontalContentAlignment="Center" Background="Wheat"></Label>
-        <Label Grid.Row="1" Grid.Column="0" Content="Player Status" Background="Beige"></Label>
-        <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Content="Main Screen" Background="WhiteSmoke" ></Label>
+
+        <Grid Grid.Row="1" Grid.Column="0"  Background="Beige">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Name: " HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}" HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Class: " HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPlayer.CharClass}" HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Health: " HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding CurrentPlayer.Health}" HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Gold: " HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.Gold}" HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="XP: " HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}" HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Level: " HorizontalContentAlignment="Center"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}" HorizontalContentAlignment="Center"/>
+        </Grid>
+
+        <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Content="Main Screen" Background="AntiqueWhite" ></Label>
+        
         <Label Grid.Row="3" Grid.Column="0" Content="Inventory and Quests" Background="SandyBrown"></Label>
+        
         <Label Grid.Row="2" Grid.Column="1" Content="Combat and Movement" Background="LightBlue" Margin="0,100,0,0"></Label>
+        
     </Grid>
 </Window>
