@@ -16,10 +16,10 @@ namespace Engine.ViewModels
             CurrentPlayer = new Player();
             CurrentPlayer.Name = "BLONDED2K";
             CurrentPlayer.CharClass = "Warrior";
-            CurrentPlayer.Health = 10;
-            CurrentPlayer.Gold = 1000000;
+            CurrentPlayer.Health = 100;
+            CurrentPlayer.Gold = 0;
             CurrentPlayer.ExperiencePoints = 0;
-            CurrentPlayer.Level = 1;
+            CurrentPlayer.Level = 0;
         }
     }
 }

@@ -27,5 +27,10 @@ namespace WPFUI
 
             DataContext = _gameSession; //What MainWIndow.xaml will use for its values
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            _gameSession.CurrentPlayer.ExperiencePoints = _gameSession.CurrentPlayer.ExperiencePoints + 10;
+        }
     }
 }
