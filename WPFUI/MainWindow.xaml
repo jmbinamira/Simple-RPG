@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="First RPG Game" Height="540" Width="960">
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <!--Take all the remaining space-->
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="225"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Main Menu" HorizontalContentAlignment="Center" Background="Wheat"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="Player Status" Background="Beige"></Label>
+        <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Content="Main Screen" Background="WhiteSmoke" ></Label>
+        <Label Grid.Row="3" Grid.Column="0" Content="Inventory and Quests" Background="SandyBrown"></Label>
+        <Label Grid.Row="3" Grid.Column="1" Content="Combat and Movement" Background="LightBlue"></Label>
     </Grid>
 </Window>
