@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Engine.Models;  //Gets Player(), Location() class on ./Models/Player.cs
+using Engine.Factories;
 
 namespace Engine.ViewModels
 {
     public class GameSession
     {
+        public World CurrentWorld { get; set; }
+        
         public Player CurrentPlayer { get; set; }
 
         public Location CurrentLocation { get; set; }
@@ -23,12 +26,11 @@ namespace Engine.ViewModels
             CurrentPlayer.ExperiencePoints = 0;
             CurrentPlayer.Level = 0;
 
-            CurrentLocation = new Location();
-            CurrentLocation.Name = "Home";
-            CurrentLocation.XCoordinate = 0;
-            CurrentLocation.YCoordinate = -1;
-            CurrentLocation.Description = "Your home";
-            CurrentLocation.ImageName = "pack://application:,,,/Engine;component/Images/Locations/home.png";  //Modified Engine.csproj by adding .WindowsDesktop at ProjectSdk
+            WorldFactory factory = new WorldFactory();  //Since there are many locations, a factory class is needed to create other objects
+            CurrentWorld = factory.CreateWorld();  //After creating a game session, it will create a WOrldFactory object, call the CreateWorld function (which creates a new world object
+                                                   //and return it here and assign it to CurrentWorld property)
+
+            CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
     }
 }
