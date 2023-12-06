@@ -62,36 +62,53 @@ namespace Engine.ViewModels
 
         public GameSession()  //Constructor (if we want to create a GameSession() object)
         {
-            CurrentPlayer = new Player();
-            CurrentPlayer.Name = "BLONDED2K";
-            CurrentPlayer.CharClass = "Warrior";
-            CurrentPlayer.Health = 100;
-            CurrentPlayer.Gold = 0;
-            CurrentPlayer.ExperiencePoints = 0;
-            CurrentPlayer.Level = 0;
+            CurrentPlayer = new Player  //When creating an objeck and it has public propertiies, use this named parameters
+            { 
+                Name="BLONDED2K", 
+                CharClass="Warrior", 
+                Health=100, 
+                Gold=0, 
+                ExperiencePoints=0, 
+                Level=0
+            };
 
-            WorldFactory factory = new WorldFactory();  //Since there are many locations, a factory class is needed to create other objects
-            CurrentWorld = factory.CreateWorld();  //After creating a game session, it will create a WOrldFactory object, call the CreateWorld function (which
-                                                   //creates a new world object and return it here and assign it to CurrentWorld property)
+            CurrentWorld = WorldFactory.CreateWorld();  //Gets CreateWorld function in WorldFactory class (both static).
+                                                        //Creates a new world object (fills it with locations)
 
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
 
         public void MoveNorth()  //Public since we're calling another function from the WPFUI project
         {
-            CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
+            if (HasLocationToNorth)  //GuardClauses. Prevents error from user input. Another safety net instead of hiding the buttons
+            {
+                CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
+            }
+            
         }
         public void MoveWest()
         {
-            CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
+            if(HasLocationToWest)
+            {
+                CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
+            }
+            
         }
         public void MoveEast()
         {
-            CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
+            if (HasLocationToEast)
+            {
+                CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
+            }
+            
         }
         public void MoveSouth()
         {
-            CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+            if (HasLocationToSouth)
+            {
+                CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+            }
+            
         }
     }
 }
