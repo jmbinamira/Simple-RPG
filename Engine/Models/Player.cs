@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    public class Player : INotifyPropertyChanged  //Used whenever a class notifies other classes if its properties changed (requires 2 things)
+    public class Player : BaseNotificationClass  //Inherits the INotifyPropertyChanged from BaseNotificationClass
     {
         private string _name;
         private string _charClass;
@@ -22,7 +22,7 @@ namespace Engine.Models
             set  //Sets saves it to the backing (private) variable and raises the INotifyPropertyChanged event w/ the propery name
             {
                 _name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged(nameof(Name));
             }
         }
         public string CharClass
@@ -31,7 +31,7 @@ namespace Engine.Models
             set
             {
                 _charClass = value;
-                OnPropertyChanged("CharClass");
+                OnPropertyChanged(nameof(CharClass));
             }
         }
         public double Health
@@ -40,7 +40,7 @@ namespace Engine.Models
             set
             {
                 _health = value;
-                OnPropertyChanged("Health");
+                OnPropertyChanged(nameof(Health));
             }
         }
         public double ExperiencePoints
@@ -49,7 +49,7 @@ namespace Engine.Models
             set 
             { 
                 _experiencePoints = value;
-                OnPropertyChanged("ExperiencePoints");
+                OnPropertyChanged(nameof(ExperiencePoints));
             }
         }
         public int Level
@@ -69,12 +69,6 @@ namespace Engine.Models
                 _gold = value;
                 OnPropertyChanged("Gold");
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;  //#1
-        protected virtual void OnPropertyChanged(string propertyName)  //#2
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

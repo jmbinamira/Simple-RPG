@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace Engine.ViewModels
 {
-    public class GameSession : INotifyPropertyChanged
+    public class GameSession : BaseNotificationClass
     {
         private Location _currentLocation;       
         
@@ -23,11 +23,11 @@ namespace Engine.ViewModels
             set
             {
                 _currentLocation = value;
-                OnPropertyChanged("CurrentLocation");
-                OnPropertyChanged("HasLocationToNorth");
-                OnPropertyChanged("HasLocationToWest");
-                OnPropertyChanged("HasLocationToEast");
-                OnPropertyChanged("HasLocationToSouth");
+                OnPropertyChanged(nameof(CurrentLocation));  //Instead of using "Current Location", use nameof()
+                OnPropertyChanged(nameof(HasLocationToNorth));
+                OnPropertyChanged(nameof(HasLocationToWest));
+                OnPropertyChanged(nameof(HasLocationToEast));
+                OnPropertyChanged(nameof(HasLocationToSouth));
             }
         }
 
@@ -71,8 +71,8 @@ namespace Engine.ViewModels
             CurrentPlayer.Level = 0;
 
             WorldFactory factory = new WorldFactory();  //Since there are many locations, a factory class is needed to create other objects
-            CurrentWorld = factory.CreateWorld();  //After creating a game session, it will create a WOrldFactory object, call the CreateWorld function (which creates a new world object
-                                                   //and return it here and assign it to CurrentWorld property)
+            CurrentWorld = factory.CreateWorld();  //After creating a game session, it will create a WOrldFactory object, call the CreateWorld function (which
+                                                   //creates a new world object and return it here and assign it to CurrentWorld property)
 
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
@@ -92,12 +92,6 @@ namespace Engine.ViewModels
         public void MoveSouth()
         {
             CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
