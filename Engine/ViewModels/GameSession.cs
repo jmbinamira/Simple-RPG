@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Engine.Models;  //Gets Player(), Location() class on ./Models/Player.cs
+using Engine.Models;
 using Engine.Factories;
 using System.ComponentModel;
 
@@ -60,9 +60,10 @@ namespace Engine.ViewModels
             }
         }
 
-        public GameSession()  //Constructor (if we want to create a GameSession() object)
+        //Constructor
+        public GameSession()  
         {
-            CurrentPlayer = new Player  //When creating an objeck and it has public propertiies, use this named parameters
+            CurrentPlayer = new Player
             { 
                 Name="BLONDED2K", 
                 CharClass="Warrior", 
@@ -72,15 +73,15 @@ namespace Engine.ViewModels
                 Level=0
             };
 
-            CurrentWorld = WorldFactory.CreateWorld();  //Gets CreateWorld function in WorldFactory class (both static).
-                                                        //Creates a new world object (fills it with locations)
+            CurrentWorld = WorldFactory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
 
-        public void MoveNorth()  //Public since we're calling another function from the WPFUI project
+        public void MoveNorth()
         {
-            if (HasLocationToNorth)  //GuardClauses. Prevents error from user input. Another safety net instead of hiding the buttons
+            //Guard Clauses
+            if (HasLocationToNorth)  
             {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
             }
@@ -112,3 +113,12 @@ namespace Engine.ViewModels
         }
     }
 }
+
+
+/*
+> Engine.Models gets Player and Location class on ./Models/Player.cs.
+> When creating an object and it has public properties, use the format on CurrentPlayer.
+> WorlFactory.CreateWorld() gets CreateWorld function in WorldFactory class (both static) and creates a new world object (fills it with locations).
+> MoveNorth is public since we're calling another function from the WPFUI project.
+> Guard Clauses. Prevents error from user input. Another safety net instead of hiding the buttons.
+*/

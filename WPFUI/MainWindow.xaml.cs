@@ -8,7 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Engine.ViewModels; //Gets GameSession class on ./Engine/Models/GameSession.cs
+using Engine.ViewModels;
 
 namespace WPFUI
 {
@@ -28,7 +28,7 @@ namespace WPFUI
             DataContext = _gameSession; //What MainWIndow.xaml will use for its values
         }
 
-        private void OnClick_MoveNorth(object sender, RoutedEventArgs e)  //Private since MainWindow.xaml will only use it
+        private void OnClick_MoveNorth(object sender, RoutedEventArgs e) 
         {
             _gameSession.MoveNorth();
         }
@@ -46,3 +46,9 @@ namespace WPFUI
         }
     }
 }
+
+
+/*
+>  Engine.ViewModels gets GameSession class on ./Engine/Models/GameSession.cs
+>  OnClick_MoveXXX is private since MainWindow.xaml will only use it
+*/

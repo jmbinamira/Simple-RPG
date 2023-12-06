@@ -9,7 +9,8 @@ namespace Engine.Models
     public class World
     {
         private List<Location> _locations = new List<Location>();
-        internal void AddLocation(int XCoordinate, int YCoordinate, string Name, string Description, string ImageName) //Void since we're not returning anything
+        //Void since we're not returning anything
+        internal void AddLocation(int XCoordinate, int YCoordinate, string Name, string Description, string ImageName) 
         {
             Location loc = new Location();
             loc.XCoordinate = XCoordinate;
@@ -18,7 +19,8 @@ namespace Engine.Models
             loc.Description = Description;
             loc.ImageName = ImageName;
 
-            _locations.Add(loc);  //Adds the newly created object to the list
+            //Adds the newly created object to the list
+            _locations.Add(loc);  
         }
         
         public Location LocationAt(int XCoordinate, int YCoordinate)

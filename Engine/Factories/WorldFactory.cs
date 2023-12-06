@@ -7,10 +7,9 @@ using Engine.Models;
 
 namespace Engine.Factories
 {
-    internal static class WorldFactory  //Static since it is globally available. //Since there are many locations, a
-                                        //factory class is needed to create other objects
+    internal static class WorldFactory                                     
     {
-        internal static World CreateWorld()  //Can only be used inside the Engine project. It returns a world object
+        internal static World CreateWorld()
         {
             World newWorld = new World();
 
@@ -24,10 +23,16 @@ namespace Engine.Factories
 
             newWorld.AddLocation(0, -1, "Home", 
                 "Your home", 
-                "pack://application:,,,/Engine;component/Images/Locations/home.png");  //Modified Engine.csproj
-                                                                                       //by adding .WindowsDesktop at ProjectSdk
+                "pack://application:,,,/Engine;component/Images/Locations/home.png");                                                                                       
 
             return newWorld;
         }
     }
 }
+
+
+/*
+> Static since it is globally available. Since there are many locations, a factory class is needed to create other objects.
+> CreateWorld can only be used inside the Engine project. It returns a world object.
+> For images to appear, Engine.csproj is modified by adding .WindowsDesktop at ProjectSdk.
+ */ 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    public class Player : BaseNotificationClass  //Inherits the INotifyPropertyChanged from BaseNotificationClass
+    public class Player : BaseNotificationClass 
     {
         private string _name;
         private string _charClass;
@@ -16,10 +16,10 @@ namespace Engine.Models
         private int _level;
         private int _gold;
 
-        public string Name  //Properties/Attributes of the class Player
+        public string Name 
         {
-            get { return _name; }  //Gets returns any properties from the backing variable
-            set  //Sets saves it to the backing (private) variable and raises the INotifyPropertyChanged event w/ the propery name
+            get { return _name; }
+            set  
             {
                 _name = value;
                 OnPropertyChanged(nameof(Name));
@@ -72,3 +72,10 @@ namespace Engine.Models
         }
     }
 }
+
+
+/*
+> Player class inherits the INotifyPropertyChanged from BaseNotificationClass
+> Name, CharClass, etc. from Player class
+> Getter returns any properties from the backing variable (private). Setter saves it to the backing variable and notifes the INotifyPropertyChanged event w/ the propery name
+*/
