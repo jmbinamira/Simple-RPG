@@ -13,13 +13,13 @@ namespace Engine.Factories
         {
             World newWorld = new World();
 
-            newWorld.AddLocation(-2, -1, "Tavern Open Area",
-               "Extension of the tavern for more space.",
-               "pack://application:,,,/Engine;component/Images/Locations/tavernopenarea.png");
+            newWorld.AddLocation(-2, -1, "Farm Field",
+               "Full of crops and other farm plants.",
+               "pack://application:,,,/Engine;component/Images/Locations/farmfield.png");
 
-            newWorld.AddLocation(-1, -1, "Tavern",
-                "Tavern where locals can drink and socialize.",
-                "pack://application:,,,/Engine;component/Images/Locations/tavern.png");
+            newWorld.AddLocation(-1, -1, "Farmhouse",
+                "Area where farm animals go for shelter.",
+                "pack://application:,,,/Engine;component/Images/Locations/farmhouse.png");
 
             newWorld.AddLocation(0, -1, "Home", 
                 "Your home", 

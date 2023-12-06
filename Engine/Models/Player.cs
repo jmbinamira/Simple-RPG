@@ -25,7 +25,6 @@ namespace Engine.Models
                 OnPropertyChanged("Name");
             }
         }
-        
         public string CharClass
         {
             get { return _charClass; }
@@ -35,7 +34,6 @@ namespace Engine.Models
                 OnPropertyChanged("CharClass");
             }
         }
-
         public double Health
         {
             get { return _health; }
@@ -45,7 +43,6 @@ namespace Engine.Models
                 OnPropertyChanged("Health");
             }
         }
-
         public double ExperiencePoints
         {
             get { return _experiencePoints; }
@@ -55,7 +52,6 @@ namespace Engine.Models
                 OnPropertyChanged("ExperiencePoints");
             }
         }
-
         public int Level
         {
             get { return _level; }
@@ -65,7 +61,6 @@ namespace Engine.Models
                 OnPropertyChanged("Level");
             }
         }
-
         public int Gold
         {
             get { return _gold; }
@@ -77,7 +72,6 @@ namespace Engine.Models
         }
 
         public event PropertyChangedEventHandler PropertyChanged;  //#1
-
         protected virtual void OnPropertyChanged(string propertyName)  //#2
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

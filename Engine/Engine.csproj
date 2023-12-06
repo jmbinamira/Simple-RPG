@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Locations\farmfield.png" />
+    <None Remove="Images\Locations\farmhouse.png" />
     <None Remove="Images\Locations\home.jpeg" />
     <None Remove="Images\Locations\home.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Locations\farmfield.png" />
+    <Resource Include="Images\Locations\farmhouse.png" />
     <Resource Include="Images\Locations\home.png" />
   </ItemGroup>
 
