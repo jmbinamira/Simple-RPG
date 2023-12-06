@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -70,12 +71,22 @@ namespace Engine.Models
                 OnPropertyChanged("Gold");
             }
         }
+
+        //List of items in the player's inventory
+        public ObservableCollection<GameItem> Inventory { get; set; }
+
+        public Player()
+        {
+            Inventory = new ObservableCollection<GameItem>();
+        }
     }
 }
 
 
 /*
-> Player class inherits the INotifyPropertyChanged from BaseNotificationClass
-> Name, CharClass, etc. from Player class
-> Getter returns any properties from the backing variable (private). Setter saves it to the backing variable and notifes the INotifyPropertyChanged event w/ the propery name
+> Player class inherits the INotifyPropertyChanged from BaseNotificationClass.
+> Name, CharClass, etc. from Player class.
+> Getter returns any properties from the backing variable (private). Setter saves it to the backing variable and notifes the INotifyPropertyChanged event w/ the propery name.
+> ObservableCollection is from System.Collections.ObjectModel. OnPropertyChanged is no longer needed, handled by ObservableCollection.
+> Similar to ItemFactory, public Player will create a new ObservableCollection so that we can add items to this collection.
 */

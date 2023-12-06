@@ -37,7 +37,7 @@ namespace Engine.Factories
 
 /*
 > Static classes have no constructors.
-> The 1st time someone calls a funciton in ItemFactory, the static ItemFactory will run. It initializes an empty list then adds items to it.
+> The 1st time someone calls a funciton in ItemFactory, the static ItemFactory will run. It initializes an empty list then adds items to it (required).
 > CreateGameItem will create items for the list. The parameter will be passed to the list to find the matching ID using LINQ.
 > Language-Integrated Query, query language to see what's inside of a list. standardItem will either have the ID on the list or null.
 > It it has a matching ID, it will create a clone of it.
