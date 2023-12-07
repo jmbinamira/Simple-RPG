@@ -17,6 +17,9 @@
     <None Remove="Images\Locations\merchantstore.png" />
     <None Remove="Images\Locations\towncenter.png" />
     <None Remove="Images\Locations\towngate.png" />
+    <None Remove="Images\Monsters\daedra.png" />
+    <None Remove="Images\Monsters\skeever.png" />
+    <None Remove="Images\Monsters\wolf.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +32,9 @@
     <Resource Include="Images\Locations\merchantstore.png" />
     <Resource Include="Images\Locations\towncenter.png" />
     <Resource Include="Images\Locations\towngate.png" />
+    <Resource Include="Images\Monsters\daedra.png" />
+    <Resource Include="Images\Monsters\skeever.png" />
+    <Resource Include="Images\Monsters\wolf.png" />
   </ItemGroup>
 
 </Project>

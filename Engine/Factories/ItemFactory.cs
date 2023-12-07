@@ -19,6 +19,10 @@ namespace Engine.Factories
             _standardGameItems.Add(new Weapon(1002, "Rusty Sword", 2, 5, 8));
             _standardGameItems.Add(new GameItem(9001, "Red Flower", 10));
             _standardGameItems.Add(new GameItem(9002, "Wolf Tail", 25));
+            _standardGameItems.Add(new GameItem(9003, "Skeever Tail", 5));
+            _standardGameItems.Add(new GameItem(9004, "Skeever Fur", 10));
+            _standardGameItems.Add(new GameItem(9005, "Daedra Horns", 100));
+            _standardGameItems.Add(new GameItem(9006, "Daedra Heart", 250));
         }
 
         public static GameItem CreateGameItem(int itemTypeID)  
