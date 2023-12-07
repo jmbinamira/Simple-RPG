@@ -36,6 +36,7 @@ namespace Engine.Factories
             newWorld.AddLocation(0, 1, "Alchemy Store",
                 "Where an alchemist/wizard resides to sell tomes and potions.",
                 "pack://application:,,,/Engine;component/Images/Locations/alchemystore.png");
+            newWorld.LocationAt(0, 1).QuestsAvailableHere.Add(QuestFactory.GetQuestByID(1));
 
             newWorld.AddLocation(0, 2, "Alchemist's Field",
                 "Full of colorful plants, mushrooms, and critters.",

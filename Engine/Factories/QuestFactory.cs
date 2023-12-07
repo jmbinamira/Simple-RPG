@@ -22,7 +22,7 @@ namespace Engine.Factories
             rewardItems.Add(new ItemQuantity(1002, 5));
 
             //Creates the quest (adds it to the quest list)
-            _quests.Add(new Quest(1, "Red flowering.",
+            _quests.Add(new Quest(1, "Collect red flowers.",
                 "Gather red flowers in the field filled with strange creatures.",
                 30, 15, itemsToComplete, rewardItems));
         }

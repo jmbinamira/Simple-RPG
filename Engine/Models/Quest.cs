@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    internal class Quest
+    //Public!
+    public class Quest
     {
         public int ID { get; set; }
         public string Name { get; set; }

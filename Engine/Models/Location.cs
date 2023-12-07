@@ -14,5 +14,13 @@ namespace Engine.Models
         public string Description { get; set; }
         public string ImageName { get; set; }
 
+        //List of quests per location
+        public List<Quest> QuestsAvailableHere { get; set; } = new List<Quest>();
+
     }
 }
+
+
+/*
+> QuestAvailableHere is set to a new List<Quest> initializes it with an empty list to start with (no need for a constructor)/
+*/
