@@ -7,16 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Locations\alchemyfield.png" />
+    <None Remove="Images\Locations\alchemystore.png" />
     <None Remove="Images\Locations\farmfield.png" />
     <None Remove="Images\Locations\farmhouse.png" />
+    <None Remove="Images\Locations\hauntedmound.png" />
     <None Remove="Images\Locations\home.jpeg" />
     <None Remove="Images\Locations\home.png" />
+    <None Remove="Images\Locations\merchantstore.png" />
+    <None Remove="Images\Locations\towncenter.png" />
+    <None Remove="Images\Locations\towngate.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Locations\alchemyfield.png" />
+    <Resource Include="Images\Locations\alchemystore.png" />
     <Resource Include="Images\Locations\farmfield.png" />
     <Resource Include="Images\Locations\farmhouse.png" />
+    <Resource Include="Images\Locations\hauntedmound.png" />
     <Resource Include="Images\Locations\home.png" />
+    <Resource Include="Images\Locations\merchantstore.png" />
+    <Resource Include="Images\Locations\towncenter.png" />
+    <Resource Include="Images\Locations\towngate.png" />
   </ItemGroup>
 
 </Project>
